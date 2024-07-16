@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.7"
+version       = "0.1.8"
 author        = "genotrance"
 description   = "tree-sitter wrapper for Nim"
 license       = "MIT"
@@ -24,6 +24,10 @@ task setup, "Checkout and generate":
     withDir(".."):
       exec "nimble install nimgen -y"
   exec cmd & "nimgen " & name & ".cfg"
+  cpFile "treesitter/lib/src/wasm/stdlib-symbols.txt", "treesitter/lib/src/stdlib-symbols.txt"
+
+task checkoutAndGenerate, "Checkout and generate":
+  setupTask()
 
 before install:
   setupTask()
