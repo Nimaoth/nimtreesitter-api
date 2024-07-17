@@ -10,7 +10,7 @@ skipDirs = @["tests"]
 # Dependencies
 
 requires "https://github.com/Nimaoth/nimgen >= 0.5.4"
-requires "https://github.com/Nimaoth/nimwasmtime >= 0.1.3"
+requires "https://github.com/Nimaoth/nimwasmtime >= 0.1.4"
 
 var
   name = "treesitter"
