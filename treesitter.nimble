@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.14"
+version       = "0.1.15"
 author        = "Nimaoth"
 description   = "tree-sitter wrapper for Nim"
 license       = "MIT"
