@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.12"
+version       = "0.1.14"
 author        = "Nimaoth"
 description   = "tree-sitter wrapper for Nim"
 license       = "MIT"
@@ -10,7 +10,7 @@ skipDirs = @["tests"]
 # Dependencies
 
 requires "https://github.com/Nimaoth/nimgen >= 0.5.4"
-requires "https://github.com/Nimaoth/nimwasmtime >= 0.1.6"
+requires "https://github.com/Nimaoth/nimwasmtime >= 0.1.7"
 
 var
   name = "treesitter"
