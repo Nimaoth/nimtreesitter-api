@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.16"
+version       = "0.1.17"
 author        = "Nimaoth"
 description   = "tree-sitter wrapper for Nim"
 license       = "MIT"
@@ -10,7 +10,6 @@ skipDirs = @["tests"]
 # Dependencies
 
 requires "https://github.com/Nimaoth/nimgen >= 0.5.4"
-requires "https://github.com/Nimaoth/nimwasmtime >= 0.1.8"
 
 var
   name = "treesitter"
@@ -20,12 +19,15 @@ var
 if fileExists(name & ".nimble"):
   mkDir(name)
 
-task setup, "Checkout and generate":
+task nimgen, "Generate api using nimgen":
   if gorgeEx(cmd & "nimgen").exitCode != 0:
     withDir(".."):
       exec "nimble install nimgen -y"
   exec cmd & "nimgen " & name & ".cfg"
   cpFile "treesitter/lib/src/wasm/stdlib-symbols.txt", "treesitter/lib/src/stdlib-symbols.txt"
+
+task setup, "Checkout and generate":
+  nimgenTask()
 
 task checkoutAndGenerate, "Checkout and generate":
   setupTask()
