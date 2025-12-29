@@ -9,8 +9,6 @@ skipDirs = @["tests"]
 
 # Dependencies
 
-requires "https://github.com/Nimaoth/nimgen >= 0.5.4"
-
 var
   name = "treesitter"
   cmd = when defined(Windows): "cmd /c " else: ""
